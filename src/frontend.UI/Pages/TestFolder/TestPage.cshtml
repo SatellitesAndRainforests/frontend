@@ -1,0 +1,141 @@
+﻿@page
+@model frontend.UI.Pages.TestFolder.TestPageModel
+@{
+}
+
+<a class="govuk-back-link" asp-page="/Index">Home Page</a>
+
+    @await Html.PartialAsync("Shared/Components/_TestComponent") <!-- , Model.csModel) -->
+
+<h1 class="govuk-heading-xl">GOV.UK Design System Comprehensive Test</h1>
+
+<!-- Buttons -->
+<h2 class="govuk-heading-l">Buttons</h2>
+<a href="#" role="button" class="govuk-button">Primary button</a>
+<a href="#" role="button" class="govuk-button govuk-button--secondary">Secondary button</a>
+<a href="#" role="button" class="govuk-button govuk-button--warning">Warning button</a>
+
+<!-- Error message -->
+<h2 class="govuk-heading-l">Error Message</h2>
+<div class="govuk-form-group govuk-form-group--error">
+    <label class="govuk-label" for="input-error">
+        National Insurance number
+    </label>
+    <span id="input-error-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Enter a National Insurance number in the correct format
+    </span>
+    <input class="govuk-input govuk-input--error" id="input-error" name="input-error" type="text" aria-describedby="input-error-error">
+</div>
+
+<!-- Radio buttons -->
+<h2 class="govuk-heading-l">Radio Buttons</h2>
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Have you changed your name?
+        </legend>
+        <div class="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-yes" name="changed-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changed-name-yes">Yes</label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-no" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changed-name-no">No</label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<!-- Checkboxes -->
+<h2 class="govuk-heading-l">Checkboxes</h2>
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Which documents do you have?
+        </legend>
+        <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="passport" name="documents" type="checkbox" value="passport">
+                <label class="govuk-label govuk-checkboxes__label" for="passport">Passport</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="driving-license" name="documents" type="checkbox" value="driving-license">
+                <label class="govuk-label govuk-checkboxes__label" for="driving-license">Driving license</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="birth-certificate" name="documents" type="checkbox" value="birth-certificate">
+                <label class="govuk-label govuk-checkboxes__label" for="birth-certificate">Birth certificate</label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<!-- Textarea with character count -->
+<h2 class="govuk-heading-l">Character Count Textarea</h2>
+<div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+    <label class="govuk-label govuk-label--l" for="more-detail">
+        Can you provide more detail?
+    </label>
+    <div id="more-detail-hint" class="govuk-hint">
+        Do not include personal or financial information like your National Insurance number or credit card details.
+    </div>
+    <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
+    <div id="more-detail-info" class="govuk-hint govuk-character-count__message">
+        You can enter up to 200 characters.
+    </div>
+</div>
+
+<!-- Accordion -->
+<h2 class="govuk-heading-l">Accordion</h2>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+            <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Section 1
+                </span>
+            </h3>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body">This is the content for section 1.</p>
+        </div>
+    </div>
+    <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+            <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                    Section 2
+                </span>
+            </h3>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            <p class="govuk-body">This is the content for section 2.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<h2 class="govuk-heading-l">Table</h2>
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header">Month</th>
+            <th class="govuk-table__header">Rate for bicycles</th>
+            <th class="govuk-table__header">Rate for vehicles</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">January</td>
+            <td class="govuk-table__cell">£85</td>
+            <td class="govuk-table__cell">£95</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">February</td>
+            <td class="govuk-table__cell">£75</td>
+            <td class="govuk-table__cell">£85</td>
+        </tr>
+    </tbody>
+</table>
+

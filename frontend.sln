@@ -5,31 +5,28 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22C18D7F-3033-4B08-BF4C-44A015531021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Domain", "src\frontend.Domain\frontend.Domain.csproj", "{2A31A2B1-297A-4A99-A1E0-92E7BD7012DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Domain", "src\frontend.Domain\frontend.Domain.csproj", "{2A31A2B1-297A-4A99-A1E0-92E7BD7012DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Application", "src\frontend.Application\frontend.Application.csproj", "{3DF5DC84-1C28-42E2-A7FF-13AFE9DD50F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Application", "src\frontend.Application\frontend.Application.csproj", "{3DF5DC84-1C28-42E2-A7FF-13AFE9DD50F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Infrastructure", "src\frontend.Infrastructure\frontend.Infrastructure.csproj", "{AD1DA155-63CF-4CDA-9CCF-94E5863F41BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Infrastructure", "src\frontend.Infrastructure\frontend.Infrastructure.csproj", "{AD1DA155-63CF-4CDA-9CCF-94E5863F41BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.UI", "src\frontend.UI\frontend.UI.csproj", "{71E6CCDD-9740-47EF-94EC-0BF092F6DBDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.UI", "src\frontend.UI\frontend.UI.csproj", "{71E6CCDD-9740-47EF-94EC-0BF092F6DBDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{764F67F0-E3C5-4BEA-95F2-51CAF8BFD79E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Application.Tests", "tests\frontend.Application.Tests\frontend.Application.Tests.csproj", "{81BDF164-989C-45CB-B82A-0D11BF2F3403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Application.Tests", "tests\frontend.Application.Tests\frontend.Application.Tests.csproj", "{81BDF164-989C-45CB-B82A-0D11BF2F3403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Domain.Tests", "tests\frontend.Domain.Tests\frontend.Domain.Tests.csproj", "{A19B36F2-D493-4805-B47E-2013FAD77BE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Domain.Tests", "tests\frontend.Domain.Tests\frontend.Domain.Tests.csproj", "{A19B36F2-D493-4805-B47E-2013FAD77BE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.Infrastructure.Tests", "tests\frontend.Infrastructure.Tests\frontend.Infrastructure.Tests.csproj", "{317AA265-FC06-47E6-9C5B-65101C6A8F17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.Infrastructure.Tests", "tests\frontend.Infrastructure.Tests\frontend.Infrastructure.Tests.csproj", "{317AA265-FC06-47E6-9C5B-65101C6A8F17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend.UI.Tests", "tests\frontend.UI.Tests\frontend.UI.Tests.csproj", "{B58497F9-FA35-4B6F-B098-3F37C83D0CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frontend.UI.Tests", "tests\frontend.UI.Tests\frontend.UI.Tests.csproj", "{B58497F9-FA35-4B6F-B098-3F37C83D0CC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2A31A2B1-297A-4A99-A1E0-92E7BD7012DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -65,6 +62,9 @@ Global
 		{B58497F9-FA35-4B6F-B098-3F37C83D0CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B58497F9-FA35-4B6F-B098-3F37C83D0CC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2A31A2B1-297A-4A99-A1E0-92E7BD7012DF} = {22C18D7F-3033-4B08-BF4C-44A015531021}
 		{3DF5DC84-1C28-42E2-A7FF-13AFE9DD50F5} = {22C18D7F-3033-4B08-BF4C-44A015531021}
@@ -74,5 +74,8 @@ Global
 		{A19B36F2-D493-4805-B47E-2013FAD77BE4} = {764F67F0-E3C5-4BEA-95F2-51CAF8BFD79E}
 		{317AA265-FC06-47E6-9C5B-65101C6A8F17} = {764F67F0-E3C5-4BEA-95F2-51CAF8BFD79E}
 		{B58497F9-FA35-4B6F-B098-3F37C83D0CC7} = {764F67F0-E3C5-4BEA-95F2-51CAF8BFD79E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE3482D9-DADD-48AA-9956-31A85A58A964}
 	EndGlobalSection
 EndGlobal

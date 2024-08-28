@@ -1,4 +1,4 @@
-namespace frontend.Application.Tests;
+namespace frontend.UI.Tests.Tests;
 
 public class UnitTest1
 {
