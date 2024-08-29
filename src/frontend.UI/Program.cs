@@ -9,6 +9,7 @@ builder.Services.AddRazorPages()
 
     .AddRazorPagesOptions(options =>
     {
+        //options.Conventions.ConfigureFilter(new AutoValidateAntiforgeryTokenAttribute()); // from microsoft?
         options.Conventions.AuthorizePage("/ProtectedPage", "userPolicy");
         options.Conventions.AuthorizeFolder("/ProtectedFolder", "userPolicy");
     })
@@ -17,6 +18,8 @@ builder.Services.AddRazorPages()
         options.HtmlHelperOptions.ClientValidationEnabled = false;
     });
 //.AddMicrosoftIdentityUi();
+
+// builder.Services.Configure<GovUkOidcConfigureConfiguration>(builder.Configuration.GetSection(nameof(GovUkOidcConfiguration)));
 
 builder.Services.AddGovUkFrontend();
 
@@ -30,6 +33,9 @@ builder.Services.AddHealthChecks();
 
 // Authentication
 // Internal Portal Session
+
+
+// - internal -----------------------------------------------------------------------------------
 //builder.Configuration.AddSession(options =>
 //{
 //    options.IdleTimeout = TimeSpan.FromHours(10000);
@@ -37,6 +43,27 @@ builder.Services.AddHealthChecks();
 //    options.Cookie.IsEssential = true;
 //    options.Cookie.Name = ".front.end.service";
 //});
+
+// - external -----------------------------------------------------------------------------------
+//builder.Services.AddSession(options =>
+//{
+//    options.IdleTimeout = TimeSpan.FromHours(10);
+//    options.Cookie.HttpOnly = true;
+//    options.Cookie.IsEssential = true;
+//    options.Cookie.Name = ".from external portal";
+
+//});
+
+//builder.Host.UseSerilog((context, services, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
+//app.Use(async (context, next) =>
+//{
+//    context.Response.Headers.Append("X-Frame-Options", "DENY");
+//});
+
+ // ----------------------------------------------------------------------------------------------
+
+
 
 //builder.Services.AddAuthorization(options =>
 //{
@@ -49,7 +76,7 @@ builder.Services.AddHealthChecks();
 
 builder.Services.AddHttpContextAccessor();
 // builder.Services.AddAzureConfiguration();
-// builder.Services.AddFeatureManagement();
+//builder.Services.AddFeatureManagement();
 
 builder.Services.ConfigureApplicationServices(builder.Configuration);
 
@@ -60,6 +87,8 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor |
                                 Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto;
 });
+
+
 
 
 
@@ -84,12 +113,22 @@ else
     app.UseDeveloperExceptionPage();
 }
 
+// from external
+//app.Use(async (context, next) =>
+//{
+//    context.Response.Headers.Append("X-Frame-Options", "DENY");
+//});
+
+//app.UseSerilogRequestLogging();
+//app.UseSession();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 // app.UseAuthorization();
+//app.MapSignout();
 
 // app.UseWhen(context => context.Request.Path.StartsWithSegments("/word"), applicationBuilder =>
 // {
