@@ -3,6 +3,11 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# ignore certificate files
+*.crt
+*.key
+*.pfx
+
 # dotenv files
 .env
 

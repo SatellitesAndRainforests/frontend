@@ -1,0 +1,12 @@
+
+ docker build -t frontend:latest .
+ docker run -e ASPNETCORE_ENVIRONMENT=Development -d -p 5000:5000 -p 5001:5001 frontend:latest
+
+ # generate private key
+   openssl genrsa -out localhost.key 2048
+ # generate a certificate using the private key
+   openssl req -new -x509 -key localhost.key -out localhost.crt -days 3650 -subj "/CN=localhost"
+ # combine , private key + certificate = .pfx file ( is for kestral ) 
+   openssl pkcs12 -export -out localhost.pfx -inkey localhost.key -in localhost.crt -password pass:myPassword
+ # copy localhost.pfx to location Program.cs can read it
+
