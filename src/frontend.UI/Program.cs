@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // builder.WebHost.UseUrls("http://*:80");
 
+
+/*
 if ( builder.Environment.IsDevelopment() ) {
 	builder.WebHost.ConfigureKestrel( serverOptions => {
 		serverOptions.ListenAnyIP( 5000 );
@@ -16,6 +18,7 @@ if ( builder.Environment.IsDevelopment() ) {
 	});
 }
 else {
+*/
 	builder.WebHost.ConfigureKestrel( serverOptions => {
 		serverOptions.ListenAnyIP( 80 );
 		serverOptions.ListenAnyIP( 443, listenOptions => 
@@ -23,8 +26,9 @@ else {
 				listenOptions.UseHttps( "/https/localhost.pfx", "myPassword" );  
 			});
 	});
+/*
 }
-
+*/
 
 // Add services to the container.
 builder.Services.AddRazorPages()

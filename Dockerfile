@@ -1,7 +1,8 @@
 # Use the official .NET 8 image for the runtime environment
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 5000 5001
+EXPOSE 80 433 
+# 5000 5001
 
 # Use the official .NET 8 SDK image for building the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
